@@ -1,0 +1,68 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+let numNFTs =[];
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT(name, college, Country, Coll_Section , Attendence, Course,pass_year ) {
+    let NFT ={
+        "name":name,
+        "college":college,
+        "Country":Country,
+        "Coll_Section":Coll_Section,
+        "Attendence":Attendence,
+        "Course":Course,
+        "pass_year":pass_year,
+
+    }
+    numNFTs.push(NFT);
+    
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+  for(let i=0;i < numNFTs.length;i++){
+    console.log("ID :       " + (i+1));
+    console.log("Name:      " + numNFTs[i].name);
+    console.log("College:   " + numNFTs[i].college);
+    console.log("Country:   " + numNFTs[i].Country);
+    console.log("Coll_Section:   " + numNFTs[i].Coll_Section);
+    console.log("Attendence:   " + numNFTs[i].Attendence);
+    console.log("Course:   " + numNFTs[i].Course);
+    console.log("pass_year: " + numNFTs[i].pass_year);
+    console.log(" ");
+    console.log("End of Student Details \n" );
+  }  
+console.log(" End  \n\n");
+
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("Total NFTs Details : " +numNFTs.length);
+
+}
+
+// call your functions below this line
+mintNFT("Ayush", "Chandigarh University","India"," 817","100%","CSE","2026");
+mintNFT("Ram", "Chandigarh University","India","701","92%","CSE","2028");
+mintNFT("Laxman", "Cgc ","India","701","90%","CSE","2028");
+mintNFT("Vansh", "Chandigarh University","India","801","80%","CSE","2023");
+mintNFT("Rohit", "Delhi University","India","401","ML","2026");
+mintNFT("Alice",  "Daka University","Bangladesh", "115","AI","75%","2025");
+mintNFT("Badohan", "University of Toronto","Canada","301", "60%","Ag","2027");
+mintNFT("Jack",  "University of London ","London", "101","AI","75%","2025");
+
+listNFTs();
+
+getTotalSupply();
